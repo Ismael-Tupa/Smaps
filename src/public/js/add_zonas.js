@@ -208,7 +208,7 @@ async function guardarZona() {
     var name = document.getElementById("name").value;
 
     var objson = JSON.stringify(points);
-    let res = await axios.post('https://axiosqwertyuiop.herokuapp.com/zon', {
+    let res = await axios.post('https://api-monitoreo-rkl7.onrender.com/zon', {
         nombre: name,
         dimencion: objson
     });

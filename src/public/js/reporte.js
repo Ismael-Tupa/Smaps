@@ -1,9 +1,9 @@
 info();
 async function info() {
 
-    let datos = await axios.get('https://axiosqwertyuiop.herokuapp.com/mar/');
+    let datos = await axios.get('https://api-monitoreo-rkl7.onrender.com/mar/');
     var infos = datos.data;
-    let datos1 = await axios.get('https://axiosqwertyuiop.herokuapp.com/api/');
+    let datos1 = await axios.get('https://api-monitoreo-rkl7.onrender.com/api/');
     var users = datos1.data;
     console.log(users)
     

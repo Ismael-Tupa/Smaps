@@ -26,7 +26,7 @@ var layerControl = L.control.layers(baseMaps).addTo(map);
 
 geo();
 async function geo() {
-    let datos = await axios.get('https://axiosqwertyuiop.herokuapp.com/mar/');
+    let datos = await axios.get('https://api-monitoreo-rkl7.onrender.com/mar/');
 
     var markers = datos.data;
     for (i = 0; i < markers.length; i++) {
@@ -102,7 +102,7 @@ function markerV(v) {
 }
 async function rMenu(a) {
 
-    let datosx = await axios.get('https://axiosqwertyuiop.herokuapp.com/mar/' + a);
+    let datosx = await axios.get('https://api-monitoreo-rkl7.onrender.com/mar/' + a);
     var markers = datosx.data;
 
     markerV(markers);

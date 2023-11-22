@@ -1,7 +1,7 @@
 
 empleadosT();
 async function empleadosT() {
-    let datos = await axios.get('https://axiosqwertyuiop.herokuapp.com/api');
+    let datos = await axios.get('https://api-monitoreo-rkl7.onrender.com/api');
     var empleados = datos.data;
     console.log(empleados)
 
@@ -57,7 +57,7 @@ agregar.addEventListener('click', async () => {
     var pass = document.getElementById("login-pass").value;
     console.log(user, nombre, apellido, cuit, pass);
 
-    let dato = await axios.post('https://axiosqwertyuiop.herokuapp.com/api', {
+    let dato = await axios.post('https://api-monitoreo-rkl7.onrender.com/api', {
         username: user,
         nombre: nombre,
         apellido: apellido,
@@ -74,7 +74,7 @@ const modalx_conteiner2 = document.getElementById("modalx-conteiner2");
 const close2 = document.getElementById("close2");
 var indice = "";
 async function editar(a){
-    let dato = await axios.get('https://axiosqwertyuiop.herokuapp.com/api/');
+    let dato = await axios.get('https://api-monitoreo-rkl7.onrender.com/api/');
     var empleado = dato.data;
     document.getElementById("login-namex").value = empleado[a-1].username;
     document.getElementById("login-nombrex").value = empleado[a-1].nombre;
@@ -98,7 +98,7 @@ async function nexteditar(){
     var pass = document.getElementById("login-passx").value;
     console.log(user, nombre, apellido, cuit, pass);
 
-    let dato = await axios.post('https://axiosqwertyuiop.herokuapp.com/api/'+a, {
+    let dato = await axios.post('https://api-monitoreo-rkl7.onrender.com/api/'+a, {
         username: user,
         nombre: nombre,
         apellido: apellido,
@@ -120,7 +120,7 @@ close2.addEventListener('click', () => {
 async function eliminar(a){
     console.log(a)
     if(confirm("¿Esta seguro?")){
-        let dato = await axios.delete('https://axiosqwertyuiop.herokuapp.com/api/'+a);
+        let dato = await axios.delete('https://api-monitoreo-rkl7.onrender.com/api/'+a);
         console.log(dato.data)
         empleadosT();
     }

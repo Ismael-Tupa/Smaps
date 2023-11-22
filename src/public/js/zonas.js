@@ -12,7 +12,7 @@ var table = "";
 index();
 async function index() {
     Vpoligons = [];
-    let datos = await axios.get('https://axiosqwertyuiop.herokuapp.com/zon');
+    let datos = await axios.get('https://api-monitoreo-rkl7.onrender.com/zon');
     let zona = datos.data;
 
     table = "<table id='tables' class='table table-hover table-borderless'><thead><tr><th>Zonas registradas:</th></tr></thead><tbody>";
@@ -44,7 +44,7 @@ async function index() {
 async function busquedas() {
 
     table = "";
-    let datos = await axios.get('https://axiosqwertyuiop.herokuapp.com/zon');
+    let datos = await axios.get('https://api-monitoreo-rkl7.onrender.com/zon');
     let zona = datos.data;
     table = table + "<table id='tables' class='table table-hover table-borderless'><thead><tr><th>Zonas registradas:</th></tr></thead><tbody>";
     var shears = document.getElementById('buscard').value;
@@ -156,14 +156,14 @@ async function guardaEdit() {
     if (objson == "[]") {
         for (let i = 0; i < Vpoligons.length; i++) {
             if (Vpoligons[i].id == IndexVec) {
-                let res = await axios.post('https://axiosqwertyuiop.herokuapp.com/zon/' + IndexVec, {
+                let res = await axios.post('https://api-monitoreo-rkl7.onrender.com/zon/' + IndexVec, {
                     nombre: inputDato,
                     dimencion: Vpoligons[i].dimencion
                 });
             }
         }
     } else {
-        let res = await axios.post('https://axiosqwertyuiop.herokuapp.com/zon/' + IndexVec, {
+        let res = await axios.post('https://api-monitoreo-rkl7.onrender.com/zon/' + IndexVec, {
             nombre: inputDato,
             dimencion: objson
         });
@@ -188,7 +188,7 @@ close1.addEventListener('click', () => {
 
 async function deletZona(a) {
     console.log(a)
-    let res = await axios.delete('https://axiosqwertyuiop.herokuapp.com/zon/' + a);
+    let res = await axios.delete('https://api-monitoreo-rkl7.onrender.com/zon/' + a);
     index();
 }
 
